@@ -1,0 +1,210 @@
+/* Tokens copied from the app: SleepAid/App/AppTheme.swift */
+:root {
+  color-scheme: dark;
+  --bg: #07101D;
+  --bg2: #0D1727;
+  --surface: #111C2E;
+  --elev: #172338;
+  --text: #F4F6FB;
+  --text2: #A8B1C2;
+  --accent: #A8B8FF;
+  --accent-muted: #7287D9;
+  --border: rgba(255, 255, 255, .10);
+  --tab: #0A1322;
+  --tab-inactive: #C3CAD7;
+  --r-card: 20px;
+  --r-button: 16px;
+  --r-panel: 26px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 110px;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { display: block; max-width: 100%; }
+p { color: var(--text2); margin: 0 0 12px; }
+h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: -.01em; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+/* Top bar */
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(7, 16, 29, .82);
+  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.topbar .wrap { display: flex; align-items: center; gap: 10px; height: 56px; }
+.topbar .brand { display: flex; align-items: center; gap: 10px; color: var(--text); font-weight: 600; }
+.topbar .brand img { width: 28px; height: 28px; border-radius: 7px; }
+.topbar .spacer { flex: 1; }
+
+/* Buttons, styled like the app's pill buttons */
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px; padding: 0 22px; border-radius: 999px;
+  background: var(--elev); color: var(--accent); font-weight: 600;
+  border: 1px solid var(--border);
+}
+.pill:hover { text-decoration: none; background: #1d2b45; }
+.pill.get { background: var(--accent); color: var(--bg); border: 0; }
+.pill.get:hover { background: #bcc8ff; }
+.pill.small { min-height: 34px; padding: 0 16px; font-size: 14px; }
+
+/* App Store style product row */
+.hero { padding: 56px 0 24px; }
+.hero .wrap { display: grid; grid-template-columns: 1fr 300px; gap: 56px; align-items: center; }
+.product { display: flex; gap: 20px; align-items: center; margin-bottom: 28px; }
+.product .icon { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 0 0 1px var(--border), 0 12px 40px rgba(114, 135, 217, .25); }
+.product h1 { font-size: 26px; line-height: 1.2; }
+.product .sub { color: var(--text2); margin: 2px 0 12px; }
+.lead { font-size: 22px; line-height: 1.4; color: var(--text); font-weight: 600; max-width: 30ch; margin-bottom: 12px; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 0; padding: 0; list-style: none; }
+.facts li { font-size: 14px; color: var(--text2); background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; }
+
+/* Phone frame around real screenshots */
+.phone {
+  position: relative; flex: none; width: 100%;
+  border-radius: 46px; padding: 9px; background: #1a2130;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .14), 0 30px 80px rgba(0, 0, 0, .55);
+}
+.phone img { border-radius: 38px; width: 100%; height: auto; aspect-ratio: 600 / 1304; }
+.hero .phone { max-width: 300px; justify-self: center; }
+.glow { position: relative; }
+main { overflow-x: clip; }
+.glow::before {
+  content: ""; position: absolute; inset: 10% -20% 30%; z-index: -1;
+  background: radial-gradient(closest-side, rgba(168, 184, 255, .16), transparent);
+}
+
+/* Sections that open like the app's tabs: large title, quiet subtitle */
+.tab-section { padding: 72px 0 16px; border-top: 1px solid var(--border); }
+.tab-section > .wrap > header { margin-bottom: 28px; }
+.tab-section h2 { font-size: 34px; }
+.tab-section header p { font-size: 17px; margin-top: 4px; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.split > *, .hero .wrap > *, .page-hero .wrap > * { min-width: 0; }
+.shots { display: flex; gap: 20px; }
+.shots .phone { width: 240px; }
+
+/* Cards and grouped lists, like the app's surfaces */
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-card); padding: 20px; margin-bottom: 16px; }
+.card h3 { font-size: 17px; margin-bottom: 6px; }
+.card p:last-child { margin-bottom: 0; }
+.label { font-size: 13px; font-weight: 600; color: var(--text2); margin: 0 0 8px 4px; }
+.group { list-style: none; margin: 0 0 20px; padding: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-card); overflow: hidden; }
+.group li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 13px 18px; border-top: 1px solid var(--border); }
+.group li:first-child { border-top: 0; }
+.group .name { color: var(--text); }
+.group .val { color: var(--text2); font-size: 14px; text-align: right; }
+.group a.row { display: flex; justify-content: space-between; width: 100%; color: var(--text); }
+.group a.row::after { content: "›"; color: var(--text2); }
+.library { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 20px; }
+
+/* Timer sheet, rebuilt from the app's Sleep Timer */
+.sheet { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r-panel); padding: 18px; }
+.sheet-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.sheet-head strong { font-weight: 600; }
+.chips { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.chip { text-align: center; padding: 10px 0; border-radius: 14px; background: var(--surface); border: 1px solid var(--border); font-size: 19px; font-weight: 600; line-height: 1.1; }
+.chip small { display: block; font-size: 11px; font-weight: 400; color: var(--text2); }
+.chip.on { background: #26355a; border-color: rgba(168, 184, 255, .55); }
+.sheet .opt { margin-top: 12px; padding: 12px 14px; border-radius: 14px; background: var(--surface); border: 1px solid var(--border); }
+.sheet .opt small { display: block; color: var(--text2); }
+
+/* Mixer rows, rebuilt from the app's mixer */
+.layer { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 18px; background: var(--surface); border: 1px solid var(--border); margin-bottom: 10px; }
+.layer .dot { width: 34px; height: 34px; border-radius: 50%; background: var(--elev); flex: none; display: grid; place-items: center; color: var(--text2); font-size: 13px; }
+.layer .body { flex: 1; }
+.layer .track { height: 4px; border-radius: 2px; background: #2a3550; margin-top: 10px; position: relative; }
+.layer .track i { position: absolute; inset: 0 auto 0 0; border-radius: 2px; background: var(--accent-muted); }
+.layer .track i::after { content: ""; position: absolute; right: -11px; top: -8px; width: 22px; height: 20px; border-radius: 10px; background: #fff; }
+
+/* Tiles, like Relax and Environments */
+.tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
+.tile { border-radius: 18px; padding: 14px; min-height: 92px; display: flex; flex-direction: column; justify-content: flex-end; border: 1px solid var(--border); }
+.tile b { font-weight: 600; }
+.tile span { font-size: 13px; color: rgba(244, 246, 251, .7); }
+.t1 { background: linear-gradient(160deg, #2b3a55, #1a2539); }
+.t2 { background: linear-gradient(160deg, #5a4630, #2e2418); }
+.t3 { background: linear-gradient(160deg, #3d3a52, #221f33); }
+.t4 { background: linear-gradient(160deg, #23505a, #15303a); }
+.t5 { background: linear-gradient(160deg, #6a3a2c, #33201a); }
+.t6 { background: linear-gradient(160deg, #4d4a2c, #2a2818); }
+.t7 { background: linear-gradient(160deg, #4b3d55, #2a2232); }
+.t8 { background: linear-gradient(160deg, #283a66, #18213d); }
+
+/* Videos */
+.videos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.video { color: var(--text); font-size: 15px; }
+.video img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; border: 1px solid var(--border); margin-bottom: 8px; }
+.video:hover { text-decoration: none; }
+.video:hover img { border-color: rgba(168, 184, 255, .5); }
+
+/* Disclosure rows for questions */
+details { border-top: 1px solid var(--border); }
+details:first-child { border-top: 0; }
+summary { list-style: none; cursor: pointer; padding: 14px 18px; display: flex; justify-content: space-between; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "›"; color: var(--text2); transition: transform .2s; }
+details[open] summary::after { transform: rotate(90deg); }
+details p { padding: 0 18px 14px; margin: 0; }
+.qa { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-card); overflow: hidden; margin-bottom: 20px; }
+
+/* Floating tab bar, like the app's */
+.tabbar {
+  position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 20;
+  display: flex; gap: 4px; padding: 6px; border-radius: 30px;
+  background: var(--tab); border: 1px solid var(--border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .5);
+}
+.tabbar a {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  width: 96px; padding: 8px 0 6px; border-radius: 24px;
+  color: var(--tab-inactive); font-size: 11px;
+}
+.tabbar a:hover { text-decoration: none; color: var(--text); }
+.tabbar svg { width: 22px; height: 22px; }
+.tabbar a.on { background: #1c2a4a; color: var(--accent); }
+
+footer { border-top: 1px solid var(--border); margin-top: 56px; padding: 28px 0; font-size: 14px; }
+footer p { margin: 0 0 6px; }
+
+/* Sound pages */
+.crumb { font-size: 14px; color: var(--text2); margin-bottom: 18px; display: block; }
+.page-hero { padding: 40px 0 8px; }
+.page-hero .wrap { display: grid; grid-template-columns: 1fr 260px; gap: 48px; align-items: start; }
+.page-hero h1 { font-size: 38px; line-height: 1.15; margin-bottom: 14px; }
+.page-hero .intro { font-size: 18px; color: var(--text); }
+.page-hero .phone { max-width: 260px; }
+.mix-name { font-size: 13px; color: var(--text2); margin: 0 0 8px 4px; }
+.mixes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.mixes .card { margin: 0; }
+.mixes .card p { font-size: 14px; }
+.links { display: flex; flex-wrap: wrap; gap: 10px; }
+
+@media (max-width: 820px) {
+  .hero .wrap, .page-hero .wrap, .split { grid-template-columns: 1fr; gap: 32px; }
+  .hero { padding-top: 32px; }
+  .product .icon { width: 88px; height: 88px; border-radius: 20px; }
+  .lead { font-size: 20px; }
+  .shots { overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -20px; padding: 0 20px 8px; scrollbar-width: none; }
+  .shots .phone { width: 200px; scroll-snap-align: start; }
+  .library, .videos, .mixes { grid-template-columns: 1fr; }
+  .tab-section { padding-top: 52px; }
+  .tab-section h2 { font-size: 30px; }
+  .page-hero h1 { font-size: 30px; }
+  .page-hero .phone { max-width: 220px; justify-self: center; }
+}
+@media (max-width: 380px) {
+  .tabbar a { width: 84px; }
+  .chip { font-size: 16px; }
+}
