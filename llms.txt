@@ -23,4 +23,9 @@ Moonrain is made by a solo developer. Current version: 1.2 (October 2026). Requi
 ## Pages
 
 - [Home, features and FAQ](https://gsl0001.github.io/sleepaid-site/)
+- [Rain sounds](https://gsl0001.github.io/sleepaid-site/rain-sounds.html): the rain and thunder sounds, mixes and 8-hour videos
+- [Ocean wave sounds](https://gsl0001.github.io/sleepaid-site/ocean-sounds.html)
+- [Fireplace sounds](https://gsl0001.github.io/sleepaid-site/fireplace-sounds.html)
+- [Brown, pink and white noise](https://gsl0001.github.io/sleepaid-site/brown-noise.html), plus fans and an air conditioner
+- [YouTube: 8-hour sleep sound videos](https://www.youtube.com/@moonrain_sleep)
 - [Privacy policy](https://gsl0001.github.io/sleepaid-site/privacy.html): the app collects no data
