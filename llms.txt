@@ -2,30 +2,46 @@
 
 > A free, fully offline sleep-sound mixer for iPhone, iPad and Apple silicon Macs. No account, no ads, no subscription, no in-app purchases and no tracking. App Store: https://apps.apple.com/app/id6789770084
 
-Moonrain is made by a solo developer. Current version: 1.2 (October 2026). Requires iOS 17 or later. The App Store page is in English and Traditional Chinese; the app interface is in English.
+Moonrain is made by a solo developer. Current version: 1.3 (November 2026). Requires iOS 17 or later. The App Store page is in English and Traditional Chinese; the app interface is in English.
 
 ## Features
 
 - 28 ambient sounds: rain, ocean, forest, fire, fans, trains, and brown, pink and white noise
 - Mix up to four sounds with independent volumes
+- Describe a Mix: type a description such as "rain on a tent with a campfire" in the Mixer and Moonrain picks the sounds. The words are matched on the phone, in English; nothing is sent anywhere
 - Sleep timer that fades everything out
 - Relax: wind down, body scan, a breathing guide with a soft tone, and 8 whispered ASMR experiences in 3D sound
-- Meditation timer with Tibetan, crystal and deep singing bowls
-- Environments for work or study: coffee shop, library, park, rainy tea house and train, plus a noise lab
-- Gentle wake alarm that fades in a nature sound
-- Dim bedside clock with a red night light, and an OK-to-wake clock for kids
-- Day Sleeper mode for people who sleep during the day
-- Save mixes, share them as a link or QR code, back them up, or export one as an audio file
+- Meditation timer of 5 to 60 minutes with Tibetan, crystal and deep singing bowls, an optional interval bell and an ending bell
+- Environments for work or study: coffee shop, library, park, rainy tea house and train, plus a noise lab. Sessions of 25, 50 or 90 minutes, or focus cycles of 25 minutes with 5 minute breaks
+- Presets, saved mixes and Environments places show up in iPhone search
+- A Moonrain Focus filter can open Environments when a Work Focus starts
+- Gentle wake alarm that fades in birdsong, a stream or wind chimes over two minutes
+- Dim bedside clock with a red night light, and an OK-to-wake clock for kids that shows a red moon until wake time, then a green sun
+- Day Sleeper mode for people who sleep during the day, for example after a night shift
+- Save mixes, share them as a link or QR code, back them up, or export one as an audio file of 30 minutes, 1 hour or 8 hours
 - Home Screen, Lock Screen and StandBy widgets, Control Center controls and Siri
 - Simple Mode with large text and one big play button
 - Plays all night with the screen locked
 
+## New in version 1.3 (2 November 2026)
+
+- Describe a Mix
+- Presets, saved mixes and Environments places in iPhone search
+- The Focus filter can open Environments when a Work Focus starts
+- Larger text, VoiceOver and contrast fixes
+- The system alarm always rings at wake time, and the sleep mix stays off after it is dismissed
+
 ## Pages
 
 - [Home, features and FAQ](https://gsl0001.github.io/sleepaid-site/)
+- [A sleep sounds app with no subscription, no account and no ads](https://gsl0001.github.io/sleepaid-site/no-subscription-sleep-sounds.html): what Moonrain costs, what it collects and what is included
+- [White noise and fan sounds](https://gsl0001.github.io/sleepaid-site/white-noise-fan-sounds.html): white noise, fans, an air conditioner and a hair dryer
+- [Brown, pink and white noise](https://gsl0001.github.io/sleepaid-site/brown-noise.html), plus fans and an air conditioner
+- [Whispered ASMR](https://gsl0001.github.io/sleepaid-site/whispered-asmr.html): the eight ASMR experiences and their lengths
+- [Meditation timer with singing bowls](https://gsl0001.github.io/sleepaid-site/meditation-timer.html): lengths, bowls and bells
+- [Focus and study sounds](https://gsl0001.github.io/sleepaid-site/focus-study-sounds.html): coffee shop, library and train Environments, the noise lab and focus cycles
 - [Rain sounds](https://gsl0001.github.io/sleepaid-site/rain-sounds.html): the rain and thunder sounds, mixes and 8-hour videos
 - [Ocean wave sounds](https://gsl0001.github.io/sleepaid-site/ocean-sounds.html)
 - [Fireplace sounds](https://gsl0001.github.io/sleepaid-site/fireplace-sounds.html)
-- [Brown, pink and white noise](https://gsl0001.github.io/sleepaid-site/brown-noise.html), plus fans and an air conditioner
 - [YouTube: 8-hour sleep sound videos](https://www.youtube.com/@moonrain_sleep)
 - [Privacy policy](https://gsl0001.github.io/sleepaid-site/privacy.html): the app collects no data
