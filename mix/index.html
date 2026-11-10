@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A shared mix · Moonrain</title>
+<meta name="description" content="A sleep-sound mix shared from Moonrain, a free offline sleep-sound app for iPhone and iPad.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://gsl0001.github.io/sleepaid-site/mix/">
+<meta name="theme-color" content="#07101D">
+<meta name="apple-itunes-app" content="app-id=6789770084">
+<meta property="og:title" content="A Moonrain mix">
+<meta property="og:description" content="Someone shared a sleep-sound mix with you. Open it in Moonrain, a free offline sleep-sound app for iPhone and iPad.">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<link rel="stylesheet" href="../style.css">
+<style>
+.layer .body { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; column-gap: 12px; }
+.layer .track { flex-basis: 100%; }
+.layer .vol { color: var(--text2); font-size: 14px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 16px; }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="../"><img src="../img/icon-180.png" alt="" width="28" height="28">Moonrain</a>
+  <span class="spacer"></span>
+  <a class="pill small get" href="https://apps.apple.com/app/id6789770084?pt=129096683&amp;ct=shared-mix&amp;mt=8">Get</a>
+</div></div>
+
+<main>
+<section class="page-hero">
+  <div class="wrap">
+    <div>
+      <div id="mix" hidden>
+        <h1>A Moonrain mix</h1>
+        <p class="intro">Someone shared this sleep-sound mix with you. Open it in Moonrain to play these sounds together, each at its own volume.</p>
+        <div id="layers"></div>
+        <div class="actions">
+          <a class="pill get" id="open" href="sleepaid://mix">Open in Moonrain</a>
+          <a class="pill" href="https://apps.apple.com/app/id6789770084?pt=129096683&amp;ct=shared-mix&amp;mt=8">Get Moonrain on the App Store</a>
+        </div>
+        <p>If you don't have Moonrain yet, get it from the App Store first, then come back to this page and tap Open in Moonrain.</p>
+      </div>
+
+      <div id="nomix">
+        <h1 id="nomix-title">No mix in this link</h1>
+        <p class="intro" id="nomix-text">This page opens sleep-sound mixes that people share from Moonrain, and the link you followed doesn't include one.</p>
+        <div class="actions">
+          <a class="pill get" href="https://apps.apple.com/app/id6789770084?pt=129096683&amp;ct=shared-mix&amp;mt=8">Get Moonrain on the App Store</a>
+        </div>
+      </div>
+
+      <p>Moonrain is a free sleep-sound app for iPhone, iPad and Apple silicon Macs. It works completely offline: no account, no ads, no subscription and no tracking.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <p><a href="../">Moonrain</a> · <a href="../privacy.html">Privacy</a> · <a href="mailto:gsl456789@gmail.com">Contact</a></p>
+</div></footer>
+
+<nav class="tabbar" aria-label="Sections">
+  <a href="../#sleep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>Sleep</a>
+  <a href="../#relax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19c4-1 7-4 8-9 1 5 4 8 8 9"/><path d="M12 10c0-3 1-5 3-6-1 3-1 5-3 6z"/></svg>Relax</a>
+  <a href="../#environments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg>Environments</a>
+</nav>
+
+<script>
+// Generated from the app's SleepAid/Resources/Catalog/catalog.json by
+// tools/update_mix_sounds.py. Do not edit by hand.
+/* sounds:start */
+const SOUNDS = {
+  "window-rain": "Window Rain",
+  "heavy-rain": "Heavy Rain",
+  "gentle-rain": "Gentle Rain",
+  "tent-rain": "Tent Rain",
+  "spring-rain": "Spring Rain",
+  "distant-thunder": "Distant Thunder",
+  "night-forest": "Night Forest",
+  "ocean-waves": "Ocean Waves",
+  "river": "River",
+  "soft-wind": "Soft Wind",
+  "mountain-wind": "Mountain Wind",
+  "wind-chimes": "Wind Chimes",
+  "meadow": "Meadow",
+  "fireplace": "Fireplace",
+  "campfire": "Campfire",
+  "brown-noise": "Brown Noise",
+  "pink-noise": "Pink Noise",
+  "white-noise": "White Noise",
+  "deep-fan": "Deep Fan",
+  "air-conditioner": "Air Conditioner",
+  "train-cabin": "Train Cabin",
+  "airplane-cabin": "Airplane Cabin",
+  "cozy-room": "Cozy Room",
+  "cafe": "Café",
+  "box-fan": "Box Fan",
+  "hair-dryer": "Hair Dryer",
+  "heartbeat": "Heartbeat",
+  "cabin-hum": "Cabin Hum"
+};
+/* sounds:end */
+
+// Mirrors MixLink.entries(from:) in the app: unknown ids, repeats and
+// malformed pairs are dropped, volumes are clamped, at most four layers.
+const MAX_LAYERS = 4;
+function parseMix(value) {
+  const entries = [];
+  for (const pair of value.split(",")) {
+    const i = pair.indexOf(":");
+    if (i < 1) continue;
+    const id = pair.slice(0, i);
+    const text = pair.slice(i + 1).trim();
+    const percent = Number(text);
+    if (text === "" || !Number.isFinite(percent)) continue;
+    if (!Object.prototype.hasOwnProperty.call(SOUNDS, id) || entries.some(e => e.id === id)) continue;
+    entries.push({ id, percent: Math.round(Math.min(Math.max(percent, 0), 100)) });
+    if (entries.length === MAX_LAYERS) break;
+  }
+  return entries;
+}
+
+const value = new URLSearchParams(location.search).get("l");
+const entries = value ? parseMix(value) : [];
+if (entries.length) {
+  const layers = document.getElementById("layers");
+  entries.forEach((entry, index) => {
+    const row = document.createElement("div");
+    row.className = "layer";
+    const dot = document.createElement("span");
+    dot.className = "dot";
+    dot.textContent = String(index + 1);
+    const body = document.createElement("div");
+    body.className = "body";
+    const name = document.createElement("span");
+    name.textContent = SOUNDS[entry.id];
+    const vol = document.createElement("span");
+    vol.className = "vol";
+    vol.textContent = entry.percent + "%";
+    const track = document.createElement("div");
+    track.className = "track";
+    const fill = document.createElement("i");
+    fill.style.width = entry.percent + "%";
+    track.appendChild(fill);
+    body.append(name, vol, track);
+    row.append(dot, body);
+    layers.appendChild(row);
+  });
+  // Hand the link over as it came, so the app can play sounds newer than this page.
+  document.getElementById("open").href = "sleepaid://mix?l=" +
+    encodeURIComponent(value).replace(/%3A/gi, ":").replace(/%2C/gi, ",");
+  document.getElementById("mix").hidden = false;
+  document.getElementById("nomix").hidden = true;
+} else if (value !== null) {
+  document.getElementById("nomix-title").textContent = "This mix link doesn't work";
+  document.getElementById("nomix-text").textContent =
+    "The link is incomplete, or it has no sounds Moonrain knows. Ask whoever sent it to share it again, or get Moonrain and make a mix of your own.";
+}
+</script>
+</body>
+</html>
